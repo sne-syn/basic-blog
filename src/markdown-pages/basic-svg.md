@@ -1,5 +1,5 @@
 ---
-title: "Basic DOM"
+title: "Basic SVG"
 date: "2017-08-10"
 ---
 
