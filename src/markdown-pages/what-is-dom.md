@@ -5,7 +5,7 @@ date: "2021-03-01"
 
 # What Is the DOM?
 
-DOM consist of valid HTML without pseudoelements.
+DOM consists of valid HTML without pseudoelements.
 
 on the top there is WINDOW. Which luego has document object with multiple properties and methods.
 
