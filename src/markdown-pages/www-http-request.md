@@ -1,3 +1,8 @@
+---
+title: "CS basics"
+date: "2021-03-17"
+---
+
 # What is the World Wide Web
 
 The WWW is a big distributed application running on millions of servers worldwide, using a web browser, still based on the Internet connection.
