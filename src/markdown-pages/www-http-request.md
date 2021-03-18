@@ -10,6 +10,11 @@ date: "2021-03-17"
 - what do we know about Ethernet?
 - switches
 
+* http - protocol to transform text
+* https - protocol to encrypt request/response
+
+Server is a piece of software, manipulating data, provided by its owner.
+
 UDP - packages, no confirmation, no error notification, counts sum
 TCP/IP - info about prev and next package number -> controlled order, delivery confirmation message. if not - repeat package delivery. if is duplicated - delete duplicate.
 
