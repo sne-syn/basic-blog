@@ -33,7 +33,8 @@ Get info from CS Harvard about IP address (0 - 250)The ancestor of the modern In
 
 **Internet of things**
 
+**Swtching types**
 
-- circuit switching - two network nodes establish a dedicated communication channel (used by military, banks, large companies). Channel is used by full capacity. Fast and reliable connection. less flexibility, expensive, easy to break.
-- message switching - message has no limits, may clog up a route.
-- package switching
+- circuit switching - two network nodes establish a dedicated communication channel (used by military, banks, large companies). Channel is used by full capacity. Fast and reliable connection. less flexibility, expensive, easy to break. reserve the whole bandwidth in advance.
+- message switching - message has no limits, may clog up a route. Text type.
+- package switching - binary type
