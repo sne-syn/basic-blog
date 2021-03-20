@@ -32,3 +32,8 @@ This cooperative work was called - **the Internet Control Message Protocol** (IC
 Get info from CS Harvard about IP address (0 - 250)The ancestor of the modern Internet was the ARPNET, created by a US agency, funded by the Advanced Research Projects Agency, and used to connect US research labs and even London lab by satellite link. Since then networks were able to connect not dozens but billions of computer devices around the Globe.
 
 **Internet of things**
+
+
+- circuit switching - two network nodes establish a dedicated communication channel (used by military, banks, large companies). Channel is used by full capacity. Fast and reliable connection. less flexibility, expensive, easy to break.
+- message switching - message has no limits, may clog up a route.
+- package switching
