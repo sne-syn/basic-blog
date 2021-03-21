@@ -22,6 +22,10 @@ This approach was called **CSMA** - **Carrier** (stands for any medium that carr
 
 For bigger networks was created another model with a smaller number of computer devices (one Collision Domain) communicated in one and connected with other groups by using a Network Switch, which won't allow transmitting data to the other group until it's necessary. 
 
+- Hub - every connected device ends up in the the same Collision Domain.
+- Switch - every single connected computer device creates OneCollision Domain
+- Router - every single connected computer device creates OneCollision Domain + more fancier features
+
 The Internet interconnects a bunch of smaller networks in the biggest network allowing global communication to happen. This big network has multiple flexibles paths to transmit data and is very effective if any part of the connection is broken. 
 
 Routing with Message Switching - a bunch of points connected with each other into the big web, allowing to reach the destination through several possible stops - **hop count** (number of stops) stored with the message. In order not to clog up the network messages are chopped up into small pieces (packets) and may travel independently to their destination (IP - Internet Protocol = destination address) using differents hop stops and routes. Network routers aimed to balance the load across every route they care about to ensure delivery - congestion control.
@@ -33,8 +37,18 @@ Get info from CS Harvard about IP address (0 - 250)The ancestor of the modern In
 
 **Internet of things**
 
-**Swtching types**
+**Switching types**
 
-- circuit switching - two network nodes establish a dedicated communication channel (used by military, banks, large companies). Channel is used by full capacity. Fast and reliable connection. less flexibility, expensive, easy to break. reserve the whole bandwidth in advance.
-- message switching - message has no limits, may clog up a route. Text type.
+- circuit switching - two network nodes establish a dedicated communication channel (used by military, banks, large companies). Channel is used by full capacity. Fast and reliable connection. less flexible, expensive, easy to break. reserve the whole bandwidth in advance.
+- message switching - the message has no limits, may clog up a route. Text type.
 - package switching - binary type
+
+HTTP - is a set of conventions which dictate how client (web browser) talks to a web server. 
+
+418 - I'm a Teapot(April's Fool joke 1998)
+
+test out request 
+
+ex.  **curl -I http://anadea.info**
+
+IP - Internet Protocol - is a unique address
