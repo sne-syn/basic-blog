@@ -26,7 +26,7 @@ For bigger networks was created another model with a smaller number of computer 
 - Switch - every single connected computer device creates OneCollision Domain
 - Router - every single connected computer device creates OneCollision Domain + more fancier features
 
-The Internet interconnects a bunch of smaller networks in the biggest network allowing global communication to happen. This big network has multiple flexibles paths to transmit data and is very effective if any part of the connection is broken. 
+The Internet interconnects a bunch of smaller networks in the biggest network allowing global communication to happen. This big network has multiple flexibles paths to tranmit data and is very effective if any part of the connection is broken. 
 
 Routing with Message Switching - a bunch of points connected with each other into the big web, allowing to reach the destination through several possible stops - **hop count** (number of stops) stored with the message. In order not to clog up the network messages are chopped up into small pieces (packets) and may travel independently to their destination (IP - Internet Protocol = destination address) using differents hop stops and routes. Network routers aimed to balance the load across every route they care about to ensure delivery - congestion control.
 **Packet Switching**.
@@ -52,3 +52,10 @@ test out request
 ex.  **curl -I http://anadea.info**
 
 IP - Internet Protocol - is a unique address
+
+ports ("well-known ports")
+
+- :25 mail
+- :22 ssh (secure shell)
+- :80 http
+- :443 https
