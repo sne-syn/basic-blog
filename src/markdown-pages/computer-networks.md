@@ -20,7 +20,7 @@ Now MAC address is used for both Ethernet and Wi-Fi
 
 This approach was called **CSMA** - **Carrier** (stands for any medium that carries data - copper wire, air for radio waves, etc.) **Sense Multiple Access**. It has its limit - **Bandwidth** (пропускная способность). That's why it was important to develop a way to avoid collisions when several computers tried to 'talk' at the same time (| | => * <= | |). An effective decision was to program computers to wait for 1s + X ms (random) before trying to re-transmit data if the line will be still occupied to wait for 2s / 4 / 8 / 16 ... more. This approach with an exponentially growing time was called **Exponential Backoff**.
 
-For bigger networks was created another model with a smaller number of computer devices (one Collision Domain) communicated in one and connected with other groups by using a Network Switch, which won't allow transmitting data to the other group until it's necessary. 
+For bigger networks was created another model with a smaller number of computer devices (one Collision Domain) communicated in one **Broadcast Domain** and connected with other groups by using a Network Switch, which won't allow transmitting data to the other group until it's necessary. 
 
 - Hub - every connected device ends up in the the same Collision Domain.
 - Switch - every single connected computer device creates OneCollision Domain
