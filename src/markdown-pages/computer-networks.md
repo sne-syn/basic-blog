@@ -99,7 +99,7 @@ When your computer wants to connect to a website, you need two things: an IP add
 In order to find IP addresses easier, were implemented a tree data structure.
 
 DOMAIN STRUCTURE
-<br>
+
 TOP
 LEVEL             .org .gov .net .com, etc.
 DOMAIN            ^
@@ -109,3 +109,19 @@ LEVEL
 DOMAIN
 <br>
 Sub Domain of parent - es.wikipedia.org
+
+
+This data is distributed across many DNS servers, which are authorities for different parts of the tree.
+
+PHYSICAL LAYER - cable, fiber, radio signals
+MAC addresses, collision detection, exponential backoff and low-level protocols - DATA LINK LAYER
+
+NETWORK LAYER - switching, routing technologies 
+TRANSPORT LAYER - UDP, TCP (responsible for point to pint data transfer between computers), errors detection, recovering when possible
+
+SESSION LAYER - open a connection, pass information back and forth, and then close the connection when finished. DNS lookup, website request
+
+=> LAYERS OF THE OSI MODEL (OPEN SYSTEM INTERCONNECTION)
+
+PRESENTATION LAYER
+APPLICATION LAYER
