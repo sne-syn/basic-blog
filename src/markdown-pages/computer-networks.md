@@ -125,3 +125,15 @@ SESSION LAYER - open a connection, pass information back and forth, and then clo
 
 PRESENTATION LAYER
 APPLICATION LAYER
+
+
+PHYCISAL
+
+CABLES 
+- copper (electrical - voltage change)
+- fiber (glass wires - light)
+
+WIRELES -> radio waves
+- satelite - antennas
+- wi-fi
+ 
