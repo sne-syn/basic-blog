@@ -130,7 +130,7 @@ APPLICATION LAYER
 PHYCISAL
 
 CABLES 
-- copper (electrical - voltage change)
+- copper (electrical - voltage change) cat5, cat5e, cat6
 - fiber (glass wires - light)
 
 WIRELES -> radio waves
