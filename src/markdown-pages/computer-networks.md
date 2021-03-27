@@ -2,7 +2,7 @@
 title: "Computer Networks."
 date: "2021-03-20"
 ---
-
+Computers communicate with each other as humans do. 
 The Internet is one of the most important inventions of the XX century! It allows us to chat with friends, visit art galleries from home, receive online education, and vote. The ability to exchange information around the Globe forever changed the world.
 
 **Latency** - The time it takes for a message to transfer.
