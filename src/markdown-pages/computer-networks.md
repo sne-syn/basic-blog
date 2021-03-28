@@ -2,7 +2,13 @@
 title: "Computer Networks."
 date: "2021-03-20"
 ---
-Computers communicate with each other as humans do. 
+Computers can communicate with each other as humans do. They can "talk", "listen", ignore some info
+mation, communicatin can suffer from noise. They can cmmunicate in monolog, dialog or polylog.
+
+Any conversation has to start and finish properly, otherwise it'll be interrupted.
+
+Before start talking we need to wait untillothers will finish, otherwise we won't be understood or or will breack someones conversation.
+
 The Internet is one of the most important inventions of the XX century! It allows us to chat with friends, visit art galleries from home, receive online education, and vote. The ability to exchange information around the Globe forever changed the world.
 
 **Latency** - The time it takes for a message to transfer.
@@ -125,7 +131,6 @@ SESSION LAYER - open a connection, pass information back and forth, and then clo
 
 PRESENTATION LAYER
 APPLICATION LAYER
-
 
 PHYCISAL
 
