@@ -2,14 +2,11 @@
 title: "Computer Networks."
 date: "2021-03-20"
 ---
-Computers can communicate with each other as humans do. They can "talk", "listen", ignore some info
-mation, communicatin can suffer from noise. They can cmmunicate in monolog, dialog or polylog.
+Computers can communicate with each other as humans do. They can talk and listen (send and recieve information), ignore some information, their communication can suffer from noise (electromagnetical interruptions, collisions). They can communicate through a monolog, dialog or polylog.
 
 Any conversation has to start and finish properly, otherwise it'll be interrupted.
 
-Before start talking we need to wait untillothers will finish, otherwise we won't be understood or or will breack someones conversation.
-
-The Internet is one of the most important inventions of the XX century! It allows us to chat with friends, visit art galleries from home, receive online education, and vote. The ability to exchange information around the Globe forever changed the world.
+Before start talking we need to wait untill others will finish, otherwise we won't be understood or will break someones conversation.
 
 **Latency** - The time it takes for a message to transfer.
 
