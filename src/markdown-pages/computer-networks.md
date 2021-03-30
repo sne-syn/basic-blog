@@ -2,9 +2,19 @@
 title: "Computer Networks."
 date: "2021-03-20"
 ---
-Computers can communicate with each other as humans do. They can talk and listen (send and recieve information), ignore some information, their communication can suffer from noise (electromagnetical interruptions, collisions). They can communicate through a monolog, dialog or polylog.
+Computers can communicate with each other as humans do. They can talk and listen, participate in a dialog or a polylog, and broadcast the information. They can send the data carefully, making sure that at the other end, the message was fully received. Or they can be in a rush, trying to send as much data as possible and give an overview of it to the receiver ASAP.
 
-Any conversation has to start and finish properly, otherwise it'll be interrupted.
+And to really understand networking, we have to know the components involved in the communication process. There are several models explaining how the network is structured and works. But in this article, we are going to discuss a 5-layer TCP/IP model.
+
+* Physical Layer<br>
+* Data-link Layer<br>
+* Networking Layer<br>
+* Transport Layer<br>
+* Application Layer<br>
+
+Every layer of this model stays on its predecessor's shoulders. You cant climb on its top if there is some error below. So this structure allows IT-specialists to isolate the problem and fix it without messing with neighboring layers.
+
+
 
 Before start talking we need to wait untill others will finish, otherwise we won't be understood or will break someones conversation.
 
