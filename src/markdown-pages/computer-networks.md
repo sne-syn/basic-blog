@@ -26,6 +26,7 @@ From this practical needs was born an idea of **LAN** (Local Area Networks) - a 
 
 ex. Message for MAC address F => Computer with MAC address F received the message \/
 
+
 **MAC** - unique Media Access Control address => MAC address
 Now MAC address is used for both Ethernet and Wi-Fi
 
