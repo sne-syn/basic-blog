@@ -14,7 +14,13 @@ And to really understand networking, we have to know the components involved in 
 
 Every layer of this model stays on its predecessor's shoulders. You cant climb on its top if there is some error below. So this structure allows IT-specialists to isolate the problem and fix it without messing with neighboring layers.
 
-Before start talking we need to wait untill others will finish, otherwise we won't be understood or will break someones conversation.
+I propose that we imagine ourselves setting up the computer networking in our house. By default we have several computers and one printer. 
+We will start with a Physical Layer. First step will be to create a Local Area Network (LAN) - a relatively small network of close-by computer devices (all our computers, printer). We can connect one computer to a printer by cable. Lets see what type of cable we can use:
+
+- copper - cat5, cat5e, cat6 - sends 0s and 1s by chanching voltage impulses. 
+- fiber - lights
+
+Then we have to find an appropriate plug-in in our computer. And use it in order to set up a connection. Okay, now our computer and printer are connected. But others computers aren't able to send their requests to the printer. And computers can't communicate with each other. In order to connect all our devices in the same LAN we are going to use Hub. This device allows us to connect all the devices into a one LAN and now we are able to send data throuth our copper cables to everyone. What if we want to print a picture on printer but not to share it with everyone? Well every device has unique MAC address, even our printer. So we will send our picture and we will mention a printer's MAC address, so others computer devices will know that the data isn't for them and will ignore a message. Great.
 
 **Latency** - The time it takes for a message to transfer.
 
