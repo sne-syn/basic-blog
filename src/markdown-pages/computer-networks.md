@@ -14,13 +14,11 @@ And to really understand networking, we have to know the components involved in 
 
 Every layer of this model stays on its predecessor's shoulders. You cant climb on its top if there is some error below. So this structure allows IT-specialists to isolate the problem and fix it without messing with neighboring layers.
 
-
-
 Before start talking we need to wait untill others will finish, otherwise we won't be understood or will break someones conversation.
 
 **Latency** - The time it takes for a message to transfer.
 
-In the '60s, scientific commercials computers were already widely used in research labs and big companies. However, the data exchange between machines and their users was quite old-fashioned:  with punched cards, representing the data by absence or presence of holes in predefined positions, or with magnetic tapes, usually located in the vault. Also, there was no way to share some physical resources like printers or storage drives. 
+In the '60s, scientific commercials computers were already widely used in research labs and big companies. However, the data exchange between machines and their users was quite old-fashioned:  with punched cards, representing the data by absence or presence of holes in predefined positions, or with magnetic tapes, usually located in the vault. Also, there was no way to share physical resources like printers or storage drives. 
 
 From this practical needs was born an idea of **LAN** (Local Area Networks) - a relatively small network of close-by computers (2 machines or university campus with thousands of computers). One of the most famous LANs and widely used until today was the Ethernet (early '70s), created by Xerox PARC - series of computers connected to a single, common ethernet cable. When a computer 'A' wants to share data with a computer 'B', it sends data as an electrical signal through the cable, pointing MAC address of its communicator. All the computers included in this network will see the signal but may ignore it if they are not mentioned in the transmitted data's header sent over the network.
 
