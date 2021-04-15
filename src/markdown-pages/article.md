@@ -40,15 +40,31 @@ The virtual-circuit approach creates many packets. The first packet has a header
 The datagram approach allows to chop a message into many small packets and send them through different routes to reach its destination. All parcels are free to use any available path. Every packet contains all the information about its content, receiver, and sender - header. When received, packets are reassembled in the proper sequence to make up the message. Those packets have to conform to a standard called IP (Internet Protocol). Every set of numbers in IP address allows packets to find their way to this unique address and works very similar to a postal address. The datagram approach has proved to be effective for Data services like the Internet.
 
 IP address
+On a LAN, computers can communicate with each other using physical MAC addresses. However, every computer device has its unique MAC address, which doesn't reveal its location on the planet. How can we route data through hops if we don't know where the destination is located?
 
+IP protocol uses IP addresses to point receiver and sender in the packet header. IP address works as a label on each connected device that uses the Internet Protocol for communication. An IP address can be static or dynamic and allows a router to identify the referenced computer wherever it is.
 
-UDP/TCP protocols
+IPv4 address defines an IP address as a 32-bit number formed of four numbers between 0 and 255 separated by four periods. For example, 172.16.254.1. 
 
-But IP cares only about the destination and appropriate packet size. This information is stored in IP Header - unique for every data fragment. 
+IPv6 addresse uses 128 bits. For example, 2001:0db8::0001:0000. 
+Today, these two versions of the Internet Protocol are in simultaneous use. 
 
-Port number
+After the packet reached its destination using the appropriate IP address, another protocol comes to play. 
+
+Let's agree that with the right IP address and correct routing, our data packets will reach their destination anywhere on the planet. But how the computer knows what application has to open this packet: email, browser, or Skype? Every datagram contains the Port number of the application it was aimed for. For example, a packet for a web page will have a port number:80 or:443. An email application will open a packet with a port number:25, Skype -:3478. 
+
+They will receive this port number from UPD or TCP/IP Protocols.
+
+UDP HEADER - inside of the UDP header sits some useful extra information:
+Port - to give the data to the proper application, which the Operating System will read. 
+Checksum - which represents the message/data that has been sent. Allows checking if the data was received without errors or got corrupted in transit.
+Unfortunately, UDP doesn't offer any mechanisms to fix the data or request a new copy. Also, a sending computer shoots the UDP packet off but has no confirmation if it ever gets to its destination successfully. These properties sound pretty catastrophic, but some applications are ok with this because UDP is also really simple and fast.
+
+When it's critically important to receive all packets of the message, TCP protocol comes to rescue us. Which, like UDP, cares inside the IP packet special information about the port, checksum, and some fancier features.
+TCP HEADER contains a sequential number (allows a receiving computer to put the packets into the correct order). TCP requires that once a computer has correctly received a packet that it sends back an acknowledgment or ACK, so the sender will know that he can transmit the next packet. If there is no ACK or the receiver didn't receive some packet - the sender will just re-transmit the missing packet. Received more than expected - no problem, it will recover the message with sequence numbers and dismiss duplicates. We tried to explain the procedure sequentially, but in real life, TCP may send tons of packets simultaneously and receive lots of ACK.
+So TCP can handle out-of-order packet delivery, dropped packets, re-transmit packets and control its transmission rate according to available bandwidth (throttle). But it doubles the number of messages on the network that provoke delays, which may be crucial for some applications.
 
 HTTP for Web
-
+When your computer wants to connect to a website, you need two things: an IP address and a port number. But remembering a long sequence of numbers in IP addresses is a challenge. It's much easier to use websites or application names to navigate them. So the Internet has a special service that maps these domain names to addresses. It's like a phone book for websites. It's called DNS - Domain Name System. It receives a computer device request, consults its huge registry, and responds with an IP address if one exists. Then your browser sends a request over TCP/IP to this address, asking for the website's data.
 Headers
 Status Codes
