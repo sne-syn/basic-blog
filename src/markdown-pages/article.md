@@ -14,18 +14,41 @@ Half-duplex - both devices can send or receive data in both directions but not a
 
 Devices and addresses
 With cable, we can connect one computer with another - point-to-point connection. But how to connect several devices in one network and share data among them?
-To make multiple connections possible, we have to link several devices into one network and label them to ensure that the data has both: an address for the machine that sent the transmission and the one the message was intended for. Local Area Network(LAN) is a technique to create a relatively small network of close-by machines. LAN is a collection of devices connected in one physical location, such as a building, office, or home. One of the most famous communication protocols for LANs widely used today is the Ethernet, created by Xerox PARC in the early 70s. Ethernet uses a Media Access Control (MAC) address to point a sender and a receiver of transmitted data in LANs, mentioning them in the Ethernet frames header. MAC addresses are unique for every computer device and assigned by the device manufacturer.
+To make multiple connections possible, we have to link several devices into one network and label them to ensure that the data has both: an address for the machine that sent the transmission and the one the message was intended for. Local Area Network(LAN) is a technique to create a relatively small network of close-by machines. LAN is a collection of devices connected in one physical location, such as a building, office, or home. One of the most famous communication protocols for LANs widely used today is the Ethernet, created by Xerox PARC in the early 70s. Ethernet uses a Media Access Control (MAC) address to point a sender and a receiver of transmitted data in LANs, mentioning them in the Ethernet frames header. MAC addresses are unique for every computer and assigned by the device manufacturer.
 To connect several devices with unique MAC addresses into LAN, we have to choose a network device. 
-One of the most basic and straightforward devices is a Hub. A hub allows a connection to lots of computers and transmits data through cables. It doesn't know how to read the headers of shared data and sends it to every device in a network. Then every device will check the frame's header and ignore it if it wasn't mentioned there as a receiver. This approach creates a lot of noise in the network and causes data collisions if several computers simultaneously transmit data. The protocol, called Carrier Sense Multiple Access with Collision Detection, knows how to deal with collisions. CSMA/CD organizes the transmitting process by providing complex time management. Only one computer can transmit data while others are waiting silently for some period, calculated by an exponential backoff algorithm, before re-transmitting data.
+One of the most basic and straightforward devices is a Hub. A hub allows a connection to lots of computers and transmits data through cables. It doesn't know how to read the headers of shared data and sends it to every device in a network. Then every device will check the frame's header and ignore it if it isn't a receiver. This approach creates a lot of noise in the network and causes data collisions if several computers simultaneously transmit data. The protocol, called Carrier Sense Multiple Access with Collision Detection, knows how to deal with collisions. CSMA/CD organizes the transmitting process by providing complex time management. Only one computer can transmit data while others are waiting silently for some period, calculated by an exponential backoff algorithm, before re-transmitting data.
 
 But what if we want to connect more than 100 devices and not wait for the moment of silence? For more extensive networks, switches will be a better choice.
 A switch is a smart network device that contains information about the MAC addresses of the connected devices. In contrast to the hub, it reviews the packets of data and directs them to the destination without collisions.
-Both a hub and a switch allow computers to communicate over short distances in a single network segment. To effectively send data to longer distances, we have to use router devices and packet switching techniques. 
 
-Switching Technique
+Both a hub and a switch allow computers to communicate over short distances in a single network segment. To effectively transmit data to longer distances, more complex approaches were required.
 
-There are mainly three typical Switching Techniques available for digital traffic:
-Circuit switching is a technique that directly connects the sender and the receiver in an unbroken path. It provides a dedicated communication channel, but it requires a dedicated line for every connection and is very expensive. This circuit switching network is currently used by the major military communication networks of the Pentagon.
-Message switching. There is no dedicated path required between two communicating devices - lots of points are connected into the extensive network. That allows reaching the destination through several possible stops - hops.
-Packet switching is similar to message switching with one exception: big messages are chopped up into small pieces - packets - to prevent the network from clogging up with a big data pack. Every packet contains all the information about its content, receiver, and sender. It can be routed the most effective way by a router device, where each packet is treated as a separate entity - datagram. When received, packets are reassembled in the proper sequence to make up the message.
-A router is network hardware that supports communication between LAN and the Internet or LAN and WAN (Wide Area Network). Routers are generally located at gateways that join two networks so the devices on one network can communicate with the devices on another. A router can determine the best path to forward the packets. They may travel independently to their destination using different hop stops and routes. Network routers aim to balance the load across every path they care about to ensure delivery.
+In the 1960s, the World had already used two popular switching techniques: circuit switching for telephone networks and message switching for mail delivery. The third switching technique - packet switching - was designed as an effective way to transmit data through the Internet. The Internet interconnects a bunch of smaller networks in the most significant network allowing global communication to happen. This network has multiple flexibles paths to transmit data and is very effective if any part of the connection is broken. But let's discuss switching techniques in more detail.
+
+Switching Techniques
+
+Circuit switching is a technique that directly connects the sender and the receiver in an unbroken path. It provides a dedicated communication channel, but it requires a dedicated line for every connection and is very expensive. This circuit switching network was used for telephone communication and is currently used by the Pentagon's major military networks.
+
+Message switching. There is no dedicated path required between two communicating devices - lots of points are connected into the extensive network. That allows reaching the destination through several possible stops - hops. The message switching technique is effectively used by mail delivery.
+
+Packet switching is similar to message switching with one exception: big messages are chopped up into small pieces - packets - to prevent the network from clogging up with a big data set. Packets move from one hop to another until they reach the destination. Routers - the third type of networking devices - navigate them using IP (Intenet Protocols) addresses specified in their headers and supports communication between LAN and the Internet or LAN and WAN (Wide Area Network). Routers are generally located at gateways that join two networks so the devices on one network can communicate with the devices on another.
+
+Packet switching can use a datagram or a virtual-circuit approach.
+
+The virtual-circuit approach creates many packets. The first packet has a header with information about its sender, receiver, content type, and reserve road to other packets.  Subsequent packets will follow the same path as the first packet, and they will be received in order at the destination point. The issue with virtual circuits is that resources and extra information have to be reserved at every router along the path and can change way simultaneously.
+
+The datagram approach allows to chop a message into many small packets and send them through different routes to reach its destination. All parcels are free to use any available path. Every packet contains all the information about its content, receiver, and sender - header. When received, packets are reassembled in the proper sequence to make up the message. Those packets have to conform to a standard called IP (Internet Protocol). Every set of numbers in IP address allows packets to find their way to this unique address and works very similar to a postal address. The datagram approach has proved to be effective for Data services like the Internet.
+
+IP address
+
+
+UDP/TCP protocols
+
+But IP cares only about the destination and appropriate packet size. This information is stored in IP Header - unique for every data fragment. 
+
+Port number
+
+HTTP for Web
+
+Headers
+Status Codes
