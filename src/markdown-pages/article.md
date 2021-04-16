@@ -68,3 +68,8 @@ HTTP for Web
 When your computer wants to connect to a website, you need two things: an IP address and a port number. But remembering a long sequence of numbers in IP addresses is a challenge. It's much easier to use websites or application names to navigate them. So the Internet has a special service that maps these domain names to addresses. It's like a phone book for websites. It's called DNS - Domain Name System. It receives a computer device request, consults its huge registry, and responds with an IP address if one exists. Then your browser sends a request over TCP/IP to this address, asking for the website's data.
 Headers
 Status Codes
+1xx
+2xx
+3xx
+4xx
+5xx
