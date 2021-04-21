@@ -165,3 +165,5 @@ WIRELES -> radio waves
  www - collection of web pages connected with links. using browser as an user agent. manipulating different protocols in a web browser. as ftp, mailto (triggering a mail user agent), files from local file system, etc. 
 
 cat5e, cat 5 difference
+
+cat5 cables had crosstalks. Crosstalk - when an electrical pulse on one wire is accidentally detected on another wire. So the receiving isn't able to understand data, causing network error
