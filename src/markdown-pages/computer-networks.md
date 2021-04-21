@@ -163,3 +163,5 @@ WIRELES -> radio waves
  mail - protocols SMTP - ASCII, MIME types to transmit different types of data, base64
  
  www - collection of web pages connected with links. using browser as an user agent. manipulating different protocols in a web browser. as ftp, mailto (triggering a mail user agent), files from local file system, etc. 
+
+cat5e, cat 5 difference
