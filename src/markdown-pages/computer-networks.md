@@ -169,3 +169,7 @@ cat5e, cat 5 difference
 cat5 cables had crosstalks. Crosstalk - when an electrical pulse on one wire is accidentally detected on another wire. So the receiving isn't able to understand data, causing network error
 
 cashing queries for dns
+
+
+https://ieftimov.com/post/deep-dive-cors-history-how-it-works-best-practices/
+CORS 
