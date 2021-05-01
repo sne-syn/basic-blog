@@ -173,3 +173,11 @@ cashing queries for dns
 
 https://ieftimov.com/post/deep-dive-cors-history-how-it-works-best-practices/
 CORS 
+
+
+difference between POST and GET
+GET doesn't change data on server. add data to the url. url length is short and limited
+
+http2 is possible only on https.
+
+cookies cant be read from another domain
