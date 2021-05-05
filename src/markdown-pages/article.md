@@ -76,6 +76,20 @@ If there is no ACK or the receiver didn't get a packet - the sender will re-tran
 
 So TCP can handle out-of-order packet delivery, dropped packets, re-transmit packets and control its transmission rate according to available bandwidth. But it doubles the number of messages on the network that provoke delays, which may be crucial for some applications (online games, video calls, audio and video streamings).
 
+That was an overview of how the data travel from one computer to another. And now, we are going to discuss how a user interacts with data, sends it or retrieves it.
+
+DNS
+
+Computers communicate using numbers, but people are tough in remembering long sequences of numbers. Domain Name System helps to solve this dilemma. DNS is a huge distributed analogue of a phone book where every name is paired with its IP address. Unlike the phone book, the DNS isn't organised in alphabetic order and doesn't locate all records in one place. To quickly find the right recording in the system, DNS starts resolving a webpage name from its end while communicating many DNS servers. Let's recreate the DNS lookup process in greater details.
+
+If a computer device is connected to the Internet, that means that the ISP has already assigned the closest DNS server to it. The browser receives a webpage name 'support.google.com', for example,  from its user's input. Then the application runs a library procedure called the resolver and passes the name as a parameter. The resolver transmits the name to a local DNS server assigned by ISP. This server starts its lookup. The chances are that it doesn't have an IP address for 'support.google.com' in its records, and there is no cached information about its server location, so it will begin querying the root name server. 
+
+Step 1. Ask a root name server where all webpages with 'com' top-level domain are located.
+Step 2. After receiving the Com name server address, query it for a 'google' machine address.
+Step 3. Receive the information and query a google machine for its 'support' sub-domain address.
+Step 4. Receive a response with an IP address for 'support.google.com' and give it to a resolver, which then returns it to the browser.
+Step 5. The browser will send a request to the IP address provided by DNS and receive a response with a webpage.
+
 HTTP for Web
 When your computer wants to connect to a website, you need two things: an IP address and a port number. But remembering a long sequence of numbers in IP addresses is a challenge. It's much easier to use websites or application names to navigate them. So the Internet has a special service that maps these domain names to addresses. It's like a phone book for websites. It's called DNS - Domain Name System. It receives a computer device request, consults its massive registry, and responds with an IP address if one exists. Then your browser sends a request over TCP/IP to this address, asking for the website's data.
 Headers
