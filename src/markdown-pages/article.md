@@ -41,9 +41,10 @@ The datagram approach allows to chop a message into many small packets and send 
 However, how can routers effectively transmit data if they don't know where the receiver is located?
 
 Internet protocol
-Internet Protocol is responsible for addressing, routing and delivering requests. Routers navigate data using an IP address from the IP header to label a sender and a recipient. IP address works as a label on each connected to the Internet device. It can be static or dynamic and allows a router to identify the referenced computer location wherever it is.
+Internet Protocol is responsible for addressing, routing and delivering requests. Routers navigate data using an IP address from the IP header to label a sender and a recipient. The IP address works as a label on each connected to the Internet device. It can be static or dynamic and allows a router to identify the referenced computer location wherever it is.
 
-And where from the LAN usually gets its IP address? From the Internet Provider. Even though the Internet doesn't belong to everyone and is free, many Internet Service Providers (ISP) allow customers to use their cables, local servers, and routers for a monthly payment to make Internet usage easy and pleasant. The ISP installs routers in users' buildings, connecting LANs to WANs and then to the Internet backbone. Internet Provider labels LANs with unique addresses - IP address. Unlike a MAC address, an IP address can be changed easily: by switching off, and on the router or by the Internet provider, there is no need to memorise it.
+And where does the LAN usually get its IP address from? From the Internet Provider. Even though the Internet doesn't belong to anyone and is free, many Internet Service Providers (ISP) allow customers to use their cables, local servers, and routers for a monthly payment to make Internet usage easy and pleasant. The ISP installs routers in users' buildings, connecting LANs to WANs and then to the Internet backbone.
+Internet Provider labels LANs with unique addresses - IP address. Unlike a MAC address, an IP address can be changed easily: by switching off, and on the router or by the Internet provider, there is no need to memorise it.
 
 IPv4 address defines an IP address as a 32-bit number formed of four numbers between 0 and 255 separated by four periods. For example, 172.16.254.1. 
 
@@ -51,23 +52,26 @@ IPv6 address uses 128 bits. For example, 2001:0db8::0001:0000.
 Today, these two versions of the IP addresses are in simultaneous use. 
 
 Transporting protocols
+
 When a post service or a delivery company sends a parcel, they validate an address. And might ask for clarification from a sender if the destination format doesn't follow the rules. But they don't care about a receiver name at this point. And even if the packaging is damaged and the delivery operators can see it just by looking at it, they will still proceed with the transportation process. Their responsibilities are fixed.
 
-A similar approach is used by IP protocol. Until the IP address is valid - the packet will be delivered from one network to another. And the protocol won't bother to check the quality of data or which program will receive it. But how does the Operation System of the computer knows what application is supposed to open the data? Why don't our emails appear in our Skype application? And how do the applications handle errors or compromised data? More advanced protocols supervise transportation responsibilities and take the delivery to the right application, check the data's integrity, discard it if it was compromised, and reassemble packets in the proper sequence making up the message. Let's overview where the necessary data sits and what are the transporting protocols.
+A similar approach is used by IP protocol. Until the IP address is valid - the packet will be delivered from one network to another. And the protocol won't bother to check the quality of data or which program will receive it. But how does the Operation System of the computer know what application is supposed to open the data? Why don't our emails appear in our Skype application? And how do the applications handle errors or compromised data? More advanced protocols supervise transportation responsibilities and take the delivery to the right application, check the data's integrity, discard it if it was compromised, and reassemble packets in the proper sequence making up the message. Let's overview where the necessary data sits and what are the transporting protocols.
 
 The receiving computer device gets a datagram packet with the source and destination IP addresses and some additional information required for routers to handle the delivery.
+
 (add image)
- Inside the IP payload, the information for an advanced protocol is located. One of the most straightforward transportation protocols is User Datagram Protocol or UDP. UDP has its own header that provides all the necessary information about the port number and a checksum.
+Inside the IP payload, the information for an advanced protocol is located. One of the most straightforward transportation protocols is User Datagram Protocol or UDP. UDP has its own header that provides all the necessary information about the port number and a checksum.
 
 A port number specifies applications so that an arriving packet can be easily forwarded to the right program.
 For example, a packet for a web page will have a port number:80 for HTTP connection or:443 - for HTTPS. An email application will open a packet with a port number :25, Skype - :3478.
+
 (well-known ports image)
 
-The checksum allows to detect and discard the erroneous packet. The sender calculates a short checksum value, representing the data that is being sent. Let's imagine that we want to receive a package with this sequence of numbers in it: 3, 6, 4, 7. Before transmitting this message, the sender summed all the numbers and wrote "checksum: 20" in the UDP header. We receive and open the packet and see their numbers 3, 6, 4. Their sum is only 13, which is different from the packet's checksum information. If the sums are not equal, the receiver will reject the packet.
+The checksum allows the system to detect and discard the erroneous packet. The sender calculates a short checksum value, representing the data that is being sent. Let's imagine that we want to receive a package with this sequence of numbers in it: 3, 6, 4, 7. Before transmitting this message, the sender summed all the numbers and wrote "checksum: 20" in the UDP header. We receive and open the packet and see their numbers 3, 6, 4. Their sum is only 13, which is different from the packet's checksum information. If the sums are not equal, the receiver will reject the packet.
 
 Unfortunately, UDP doesn't offer any mechanism to fix the data or request a new copy. Also, a sending computer shoots the UDP packet off but has no confirmation if it ever gets to its destination. These properties sound unreliable, but some applications comply with this because UDP is also straightforward and fast. For example, Skype has to process chunks of data as quickly as possible to avoid delays in Skype calls. And if one of the packets is damaged or lost, it will just freeze the video or audio until it receives the next intact piece of data.
 
-When it's critically important to receive all pieces of the data, the Transmission Control Protocol (TCP) protocol comes to the rescue. As well as UDP, it carries a port number and checksum in the header. But besides that, it has a fancier feature that makes the TCP highly reliable. 
+When it's critically important to receive all pieces of the data, the Transmission Control Protocol (TCP) comes to the rescue. As well as UDP, it carries a port number and checksum in the header. But besides that, it has a fancier feature that makes the TCP highly reliable. 
 
 Before starting data transmission, TCP requires sending a synchronise packet (SYN) to the computer device that requested data. If the SYN is received, an SYN/ACK (acknowledgement) will be sent back to a sender. Ultimately, if the original computer receives the SYN/ACK, a final ACK is sent.
 
@@ -75,11 +79,11 @@ If there is no ACK or the receiver didn't get a packet - the sender will re-tran
 
 So TCP can handle out-of-order packet delivery, dropped packets, re-transmit packets and control its transmission rate according to available bandwidth. But it doubles the number of messages on the network that provoke delays, which may be crucial for some applications (online games, video calls, audio and video streamings).
 
-That was an overview of how the data travel from one computer to another. And now, we are going to discuss how a user interacts with data, sends it and retrieves it.
+That was an overview of how the data travels from one computer to another. And now, we are going to discuss how a user interacts with data, sends it and retrieves it.
 
 DNS
 
-Computers communicate using numbers, but people are tough in remembering long sequences of numbers. Domain Name System helps to solve this dilemma. DNS is a huge distributed analogue of a phone book where every domain name is paired with its IP address. Unlike the phone book, the DNS isn't organised in alphabetic order and doesn't store all records in one place. To quickly find the right recording in the system, DNS starts resolving a webpage name from its end while communicating many DNS servers. Let's recreate the DNS lookup process in greater details.
+Computers communicate using numbers, but people find it tough to remember long sequences of numbers. Domain Name System helps to solve this dilemma. DNS is a huge distributed analogue of a phone book where every domain name is paired with its IP address. Unlike the phone book, the DNS isn't organised in alphabetic order and doesn't store all records in one place. To quickly find the right recording in the system, DNS starts resolving a web page name from its end while communicating with many DNS servers. Let's recreate the DNS lookup process in greater detail.
 
 If a computer device is connected to the Internet - the ISP has already assigned the closest DNS server to it. The browser receives a webpage name 'support.google.com', for example, from the user input. Then the application runs a library procedure called the resolver and passes the name as a parameter. The resolver transmits the name to a local DNS server assigned by ISP, which starts its lookup. The chances are that it doesn't have an IP address for 'support.google.com' in its records, and there is no cached information about its server location, so it will begin querying the root name server. 
 
