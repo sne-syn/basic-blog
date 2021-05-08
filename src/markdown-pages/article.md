@@ -92,3 +92,7 @@ Step 2. Ask the Com name server for a 'google' machine address.
 Step 3. Receive the response and query a google machine for its 'support' sub-domain address.
 Step 4. Receive a response with an IP address for 'support.google.com' and give it to a resolver, which then returns it to the browser.
 Step 5. The browser sends a request to the IP address provided by DNS and receives a response with a webpage.
+
+World Wide Web
+FTP
+HTTP
