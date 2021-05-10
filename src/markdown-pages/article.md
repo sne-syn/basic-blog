@@ -96,3 +96,23 @@ Step 5. The browser sends a request to the IP address provided by DNS and receiv
 World Wide Web
 FTP
 HTTP
+
+URL - URI 
+
+cookies: 
+
+small, named string, assigned/associated to a browser requested the page by server
+
+on client's hard disk
+4kb max
+20from one domain
+delete cookie - send with an expiration time in a past
+nonpersistent-persistent cookies
+fields: 
+domain| path| content| expires| secure
+
+the Secure field can be set to indicate that the browser may only return the cookie to a server usina a secure transport, SSL/TLS
+
+Used to contain user's preferences, shopping cart list by adding items code. So when the client clicks on PROCEED TO CHECKOUT - serer receives complete list of item. count unique site's visitors.
+
+a third-part cookies - is a cookie from a different site than the main page that is being fetched. Blocking these cookies helps to prevent tracking across Web sites.
