@@ -99,6 +99,17 @@ HTTP
 
 URL - URI 
 
+
+WWW
+Client side
+
+server side
+
+cashing mechanism,
+reading from disk is a bottleneck - slow process
+multi-threaded frontend-server commication with cashed data.
+Post request shouldn't be cached - they won't reach a server and won't make changes
+
 cookies: 
 
 small, named string, assigned/associated to a browser requested the page by server
