@@ -93,7 +93,15 @@ Step 3. The local DNS receives an IP address for 'google' server and send a quer
 Step 4. The 'google'-server responds with an IP address for 'support.google.com'. The local DNS gives it to a resolver, which then returns it to the browser.
 Step 5. The browser sends a request to the IP address provided by DNS, makes a TCP connection and receives a response with a webpage.
 
+You can find an IP address for any domain listed in DNS by running this command in the Terminal application.
+
+host -t a [host-name]
+
+(add an image with a terminal screenshot)
+
 World Wide Web
+
+We are getting close to the World Wide Web - an architectural framework for accessing and navigating through linked web pages. This particular part of the computer network system is often wrongly called 'the Internet' by its users. 
 FTP
 HTTP
 
