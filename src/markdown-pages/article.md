@@ -85,13 +85,13 @@ DNS
 
 Computers communicate using numbers, but people find it tough to remember long sequences of numbers. Domain Name System helps to solve this dilemma. DNS is a huge distributed analogue of a phone book where every domain name is paired with its IP address. Unlike the phone book, the DNS isn't organised in alphabetic order and doesn't store all records in one place. To quickly find the right recording in the system, DNS starts resolving a web page name from its end while communicating with many DNS servers. Let's recreate the DNS lookup process in greater detail.
 
-If a computer device is connected to the Internet - the ISP has already assigned the closest DNS server to it. The browser receives a webpage name 'support.google.com', for example, from the user input. Then the application runs a library procedure called the resolver and passes the name as a parameter. The resolver transmits the name to a local DNS server assigned by ISP, which starts its lookup. The chances are that it doesn't have an IP address for 'support.google.com' in its records, and there is no cached information about its server location, so it will begin querying the root name server. 
+If a computer device is connected to the Internet - the ISP has already assigned the closest DNS server to it. The browser receives a webpage name 'support.google.com', for example, from the user input. Then the application runs a library procedure called the resolver and passes the name as a parameter. The resolver transmits the name to a local DNS server assigned by ISP, which starts its lookup. The chances are that it doesn't have an IP address for 'support.google.com' in its records, and there is no cached information about its server location, so it will begin querying the root name server. By default, it has a list of the closest top-level domains servers. 
 
-Step 1. Receive an IP address of 'Com' top-level domain server.
-Step 2. Ask the Com name server for a 'google' machine address.
-Step 3. Receive the response and query a google machine for its 'support' sub-domain address.
-Step 4. Receive a response with an IP address for 'support.google.com' and give it to a resolver, which then returns it to the browser.
-Step 5. The browser sends a request to the IP address provided by DNS and receives a response with a webpage.
+Step 1. The local DNS finds an address of 'com '-server and requests the IP address for 'support.google'.
+Step 2. Perhaps, 'com'-server doesn't know where 'support.google' is located, but it has an address for 'google' server.
+Step 3. The local DNS receives an IP address for 'google' server and send a query there, asking for the 'support'-subdomain address.
+Step 4. The 'google'-server responds with an IP address for 'support.google.com'. The local DNS gives it to a resolver, which then returns it to the browser.
+Step 5. The browser sends a request to the IP address provided by DNS, makes a TCP connection and receives a response with a webpage.
 
 World Wide Web
 FTP
@@ -99,16 +99,15 @@ HTTP
 
 URL - URI 
 
-
 WWW
-Client side
+Client-side
 
-server side
+server-side
 
-cashing mechanism,
+Cashing mechanism,
 reading from disk is a bottleneck - slow process
-multi-threaded frontend-server commication with cashed data.
-Post request shouldn't be cached - they won't reach a server and won't make changes
+multi-threaded frontend-server communication with cashed data.
+Post request shouldn't be cached - they won't reach a server and won't make changes.
 
 cookies: 
 
@@ -122,8 +121,8 @@ nonpersistent-persistent cookies
 fields: 
 domain| path| content| expires| secure
 
-the Secure field can be set to indicate that the browser may only return the cookie to a server usina a secure transport, SSL/TLS
+the Secure field can be set to indicate that the browser may only return the cookie to a server using a secure transport, SSL/TLS
 
-Used to contain user's preferences, shopping cart list by adding items code. So when the client clicks on PROCEED TO CHECKOUT - serer receives complete list of item. count unique site's visitors.
+They are used to contain user's preferences, shopping cart list by adding items code. So when the client clicks on PROCEED TO CHECKOUT - the server receives a complete list of item. Count unique site's visitors.
 
-a third-part cookies - is a cookie from a different site than the main page that is being fetched. Blocking these cookies helps to prevent tracking across Web sites.
+Third-part cookies - is a cookie from a different site than the main page that is being fetched. Blocking these cookies helps to prevent tracking across Web sites.
