@@ -101,7 +101,20 @@ host -t a [host-name]
 
 World Wide Web
 
-We are getting close to the World Wide Web - an architectural framework for accessing and navigating through linked web pages. This particular part of the computer network system is often wrongly called 'the Internet' by its users. 
+
+We are getting close to the World Wide Web - an architectural framework for accessing and navigating through linked web pages. This particular part of the computer network system is often wrongly called 'the Internet' even if it just runs on top of the Internet as any other application. 
+
+From the users' point of view, the Web consists of Web pages containing references to other pages. Those references include text - hypertext - over which the links are embedded, and a unique address inside hyperlink - Uniform Resource Locator. The hyperlinks are highlighted and clickable.
+
+URLs consist of three parts:
+The protocol (also known as a scheme)
+The machine's domain name for DNS lookup
+And a path indicating a unique directory with the page information
+For example, https://en.wikiquote.org/wiki/Main_Page.
+
+When the user clicks on a hyperlink, the browser asks a DNS for the IP address of the domain specified in the URL and then establishes a TCP connection with the appropriate server machine. The next step is to ask for a specific page. In our example is 'Main_Page' located in 'wiki' directory. The browser uses an HTTP protocol (Hypertext Transfer Protocol) with a GET command in the header to retrieve data. The server replies with a hypertext we requested.
+
+
 FTP
 HTTP
 
