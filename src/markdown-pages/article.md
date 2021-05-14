@@ -85,13 +85,13 @@ DNS
 
 Computers communicate using numbers, but people find it tough to remember long sequences of numbers. Domain Name System helps to solve this dilemma. DNS is a huge distributed analogue of a phone book where every domain name is paired with its IP address. Unlike the phone book, the DNS isn't organised in alphabetic order and doesn't store all records in one place. To quickly find the right recording in the system, DNS starts resolving a web page name from its end while communicating with many DNS servers. Let's recreate the DNS lookup process in greater detail.
 
-If a computer device is connected to the Internet - the ISP has already assigned the closest DNS server to it. The browser receives a webpage name 'support.google.com', for example, from the user input. Then the application runs a library procedure called the resolver and passes the name as a parameter. The resolver transmits the name to a local DNS server assigned by ISP, which starts its lookup. The chances are that it doesn't have an IP address for 'support.google.com' in its records, and there is no cached information about its server location, so it will begin querying the root name server. By default, it has a list of the closest top-level domains servers. 
+If a computer device is connected to the Internet - the ISP has already assigned the closest DNS server to it. The browser receives a web-page name 'support.google.com', for example, from the user input. Then the application runs a library procedure called the resolver and passes the name as a parameter. The resolver transmits the name to a local DNS server assigned by ISP, which starts its lookup. The chances are that it doesn't have an IP address for 'support.google.com' in its records, and there is no cached information about its server location, so it will begin querying the root name server. By default, it has a list of the closest top-level domains servers. 
 
 Step 1. The local DNS finds an address of 'com '-server and requests the IP address for 'support.google'.
 Step 2. Perhaps, 'com'-server doesn't know where 'support.google' is located, but it has an address for 'google' server.
-Step 3. The local DNS receives an IP address for 'google' server and send a query there, asking for the 'support'-subdomain address.
+Step 3. The local DNS receives an IP address for 'google' server and sends a query there, asking for the 'support'-subdomain address.
 Step 4. The 'google'-server responds with an IP address for 'support.google.com'. The local DNS gives it to a resolver, which then returns it to the browser.
-Step 5. The browser sends a request to the IP address provided by DNS, makes a TCP connection and receives a response with a webpage.
+Step 5. The browser sends a request to the IP address provided by DNS, makes a TCP connection and receives a response with a web page.
 
 You can find an IP address for any domain listed in DNS by running this command in the Terminal application.
 
@@ -101,18 +101,29 @@ host -t a [host-name]
 
 World Wide Web
 
+We are getting close to the World Wide Web (WWW) - an architectural framework for accessing and navigating through linked web pages. This particular part of the computer network system - www - is often wrongly called 'the Internet' even if it just runs on top of the Internet, the same as any other application. (Rewrite this sentence). Through the Internet, just using the
 
-We are getting close to the World Wide Web - an architectural framework for accessing and navigating through linked web pages. This particular part of the computer network system is often wrongly called 'the Internet' even if it just runs on top of the Internet as any other application. 
+From the users' point of view, the Web consists of Web pages looking like documents with some content that can include references to other pages. Those references are called hyperlinks. They are usually highlighted and clickable and allow the user to jump up to another page if needed. The popularity of the Web is based on the fact that it is easy for beginners to use because of its rich graphical interface and amount of linked resources that form a huge web of related information. Text containing hyperlinks is called hypertext and can be retrieved and rendered by a browser. 
 
-From the users' point of view, the Web consists of Web pages containing references to other pages. Those references include text - hypertext - over which the links are embedded, and a unique address inside hyperlink - Uniform Resource Locator. The hyperlinks are highlighted and clickable.
+For pages to direct the user to a related hypertext, each hyperlink needs a unique address inside it. On the Web, addressing is specified by Uniform Resource Locator (an URL).
 
 URLs consist of three parts:
 The protocol (also known as a scheme)
 The machine's domain name for DNS lookup
 And a path indicating a unique directory with the page information
+
 For example, https://en.wikiquote.org/wiki/Main_Page.
 
-When the user clicks on a hyperlink, the browser asks a DNS for the IP address of the domain specified in the URL and then establishes a TCP connection with the appropriate server machine. The next step is to ask for a specific page. In our example is 'Main_Page' located in 'wiki' directory. The browser uses an HTTP protocol (Hypertext Transfer Protocol) with a GET command in the header to retrieve data. The server replies with a hypertext we requested.
+When the user clicks on a hyperlink, the browser asks a DNS for the IP address of the domain specified in the URL and then establishes a TCP connection with the appropriate server machine. The next step is to ask for a specific page. In our example is 'Main_Page' located in the 'wiki' directory. The browser uses an HTTP protocol (Hypertext Transfer Protocol) with a GET command in the header to retrieve data. The server replies with hypertext sent as a plain text in ASCII or UTF-16 format. 
+
+In order to control and troubleshoot possible problems with browser-server communication, status codes are added to the server response. All status codes must have three digits and are divided into five groups by the first digit.
+
+1xx informational response – the request was received, continuing process
+2xx successful – the request was successfully received, understood, and accepted
+3xx redirection – further action needs to be taken to complete the request
+4xx client error – the request contains the wrong syntax or cannot be fulfilled
+5xx server error – the server failed to fulfil a valid request
+
 
 
 FTP
