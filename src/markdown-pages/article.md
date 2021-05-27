@@ -158,3 +158,7 @@ the Secure field can be set to indicate that the browser may only return the coo
 They are used to contain user's preferences, shopping cart list by adding items code. So when the client clicks on PROCEED TO CHECKOUT - the server receives a complete list of item. Count unique site's visitors.
 
 Third-part cookies - is a cookie from a different site than the main page that is being fetched. Blocking these cookies helps to prevent tracking across Web sites.
+
+Cashing
+
+Reading from a disk the information is a slow procces. There is a way to optimize it by using cashing mecanism. 
