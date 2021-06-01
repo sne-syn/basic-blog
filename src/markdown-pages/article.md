@@ -166,3 +166,5 @@ Reading from a disk the information is a slow procces. There is a way to optimiz
 MIME types
 
 The browser has to understand the format of file that is asked to be displayed, thats why all web pages are written in a standardized language - HTML. But HTML pages can contain rich content elements as video, images, pdf files, MP3 formated audio, etc. Instead of adding special interpreter for every new format in browser engine, most browsers follow general solution, by using plug-ins or helper applications to display MIME type files correctly.
+
+Helper applications - third-part 
