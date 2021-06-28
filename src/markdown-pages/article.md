@@ -124,8 +124,6 @@ In order to control and troubleshoot possible problems with browser-server commu
 4xx client error – the request contains the wrong syntax or cannot be fulfilled
 5xx server error – the server failed to fulfil a valid request
 
-
-
 FTP
 HTTP
 
