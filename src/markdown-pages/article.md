@@ -101,11 +101,11 @@ host -t a [host-name]
 
 World Wide Web
 
-We are getting close to the World Wide Web (WWW) - an architectural framework for accessing and navigating through linked web pages. This particular part of the computer network system - www - is often wrongly called 'the Internet' even if it just runs on top of the Internet, the same as any other application. (Rewrite this sentence). Through the Internet, just using the
+We are getting close to the World Wide Web (WWW) - an architectural framework for accessing and navigating through linked web pages. This particular part of the computer network system - www - is often wrongly called 'the Internet'.
 
 From the users' point of view, the Web consists of Web pages looking like documents with some content that can include references to other pages. Those references are called hyperlinks. They are usually highlighted and clickable and allow the user to jump up to another page if needed. The popularity of the Web is based on the fact that it is easy for beginners to use because of its rich graphical interface and amount of linked resources that form a huge web of related information. Text containing hyperlinks is called hypertext and can be retrieved and rendered by a browser. 
 
-For pages to direct the user to a related hypertext, each hyperlink needs a unique address inside it. On the Web, addressing is specified by Uniform Resource Locator (an URL).
+For pages to direct the user to a related webpage, each hyperlink needs a unique address inside it. On the Web, addressing is specified by Uniform Resource Locator (an URL).
 
 URLs consist of three parts:
 The protocol (also known as a scheme)
@@ -124,15 +124,10 @@ In order to control and troubleshoot possible problems with browser-server commu
 4xx client error – the request contains the wrong syntax or cannot be fulfilled
 5xx server error – the server failed to fulfil a valid request
 
-FTP
-HTTP
+MIME types
 
-URL - URI 
+The browser has to understand the format of file that is asked to be displayed, thats why all web pages are written in a standardized language - HTML. But HTML pages can contain rich content elements as video, images, pdf files, MP3 formated audio, etc. Instead of adding special interpreter for every new format in browser engine, most browsers follow general solution, by using plug-ins or helper applications to display MIME type files correctly.
 
-WWW
-Client-side
-
-server-side
 
 Cashing mechanism,
 reading from disk is a bottleneck - slow process
