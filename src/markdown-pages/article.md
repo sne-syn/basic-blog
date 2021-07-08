@@ -16,7 +16,7 @@ Devices and addresses
 With cable, we can connect one computer with another, and it will create a point-to-point connection. But how to connect several devices in one network and share data among them?
 To make multiple connections possible, we have to link several devices into one network and label them to ensure that the data has both: an address for the machine that sent the message and the one the message was intended for. Local Area Network(LAN) is a technique to create a relatively small network of close-by machines. LAN is a collection of linked devices stationed in one physical location, such as a building, office, or home. One of the most famous communication protocols for LANs widely used today is the Ethernet, created in the early 70s. Ethernet uses a Media Access Control (MAC) address to point a sender and a receiver of transmitted data in LANs, mentioning them in the Ethernet frames header. MAC addresses are unique for every computer and assigned by the device manufacturer.
 To connect several devices with unique MAC addresses into LAN, we have to use a network device. 
-One of the most basic and straightforward devices is a Hub. A hub allows a connection to lots of computers and transmits data through cables. It doesn't know how to read the headers of shared data and sends it to every device in a network. Then every device will check the frame's header and accept the data or ignore it if it isn't a receiver. This approach creates a lot of noise in the network and causes data collisions if several computers simultaneously transmit data. The protocol, called Carrier Sense Multiple Access with Collision Detection (CSMA/CD), knows how to deal with collisions. The idea behind the protocol is that only one computer is allowed to transmit data while others are waiting silently for some period, calculated by an exponential backoff algorithm, before trying to re-transmit data.
+One of the most basic and straightforward devices is a Hub. A hub allows a connection to lots of computers and transmits data through cables. It doesn't know how to read the headers of shared data, so choose to send it to every device in a network. Then those devices will check the frame's header and accept the data or ignore it if it isn't a receiver. This approach creates a lot of noise in the network and causes data collisions if several computers simultaneously transmit data. The protocol, called Carrier Sense Multiple Access with Collision Detection (CSMA/CD), knows how to deal with collisions. The idea behind the protocol is that only one computer is allowed to transmit data while others are waiting silently for some period, calculated by an exponential backoff algorithm, before trying to re-transmit data.
 
 But what if we want to connect a lot of devices and not wait for the moment of silence? For more extensive networks, switches will be a better choice.
 A switch is a smart network device that contains information about the MAC addresses of the connected devices as a list. In contrast to the hub, it reviews the packets of data and directs them to the destination without collisions.
@@ -41,15 +41,19 @@ The datagram approach allows to chop a message into many small packets and send 
 However, how can routers effectively transmit data if they don't know where the receiver is located?
 
 Internet protocol
-Internet Protocol is responsible for addressing, routing and delivering requests. Routers navigate data using an IP address from the IP header to label a sender and a recipient. The IP address works as a label on each connected to the Internet device. It can be static or dynamic and allows a router to identify the referenced computer location wherever it is.
+Internet Protocol is responsible for addressing, routing and delivering requests. Routers navigate data using an IP address from the IP header to label a sender and a recipient. The IP address works as a label on each device connected to the Internet. It can be static or dynamic and allows a router to identify the referenced computer location wherever it is.
 
-And where does the LAN usually get its IP address from? From the Internet Provider. Even though the Internet doesn't belong to anyone and is free, many Internet Service Providers (ISP) allow customers to use their cables, local servers, and routers for a monthly payment to make Internet usage easy and pleasant. The ISP installs routers in users' buildings, connecting LANs to WANs and then to the Internet backbone.
+And where does the LAN usually get its IP address from? From the Internet Provider. Even though the Internet doesn't belong to anyone and is free, many Internet Service Providers (ISPs) allow customers to use their cables, local servers, and routers for a monthly payment to make Internet usage easy and pleasant. The ISP installs routers in users' buildings, connecting LANs to WANs and then to the Internet backbone.
+
 Internet Provider labels LANs with unique addresses - IP address. Unlike a MAC address, an IP address can be changed easily: by switching off, and on the router or by the Internet provider, there is no need to memorise it.
 
 IPv4 address defines an IP address as a 32-bit number formed of four numbers between 0 and 255 separated by four periods. For example, 172.16.254.1. 
 
 IPv6 address uses 128 bits. For example, 2001:0db8::0001:0000. 
 Today, these two versions of the IP addresses are in simultaneous use. 
+If you want to know more about IP protocol, I encourage you to watch this lecture, recorder by Google engineers. It contents in-depth overview of the protocol with a great topic explanation.
+
+++ add link on youtube 
 
 Transporting protocols
 
@@ -85,9 +89,9 @@ DNS
 
 Computers communicate using numbers, but people find it tough to remember long sequences of numbers. Domain Name System helps to solve this dilemma. DNS is a huge distributed analogue of a phone book where every domain name is paired with its IP address. Unlike the phone book, the DNS isn't organised in alphabetic order and doesn't store all records in one place. To quickly find the right recording in the system, DNS starts resolving a web page name from its end while communicating with many DNS servers. Let's recreate the DNS lookup process in greater detail.
 
-If a computer device is connected to the Internet - the ISP has already assigned the closest DNS server to it. The browser receives a web-page name 'support.google.com', for example, from the user input. Then the application runs a library procedure called the resolver and passes the name as a parameter. The resolver transmits the name to a local DNS server assigned by ISP, which starts its lookup. The chances are that it doesn't have an IP address for 'support.google.com' in its records, and there is no cached information about its server location, so it will begin querying the root name server. By default, it has a list of the closest top-level domains servers. 
+If a computer device is connected to the Internet - the ISP has already assigned the closest DNS server to it. The browser receives a web-page name 'support.google.com', for example, from the user input. Then the application runs a library procedure called the resolver and passes the name as a parameter. The resolver transmits the name to a local DNS server assigned by ISP, which starts its lookup. The chances are that it doesn't have an IP address for 'support.google.com' in its records, and there is no cached information about its server location, so it will begin querying the root name server. By default, it has a list of the closest top-level domains servers.
 
-Step 1. The local DNS finds an address of 'com '-server and requests the IP address for 'support.google'.
+Step 1. The local DNS finds an address of 'com'-server and requests the IP address for 'support.google'.
 Step 2. Perhaps, 'com'-server doesn't know where 'support.google' is located, but it has an address for 'google' server.
 Step 3. The local DNS receives an IP address for 'google' server and sends a query there, asking for the 'support'-subdomain address.
 Step 4. The 'google'-server responds with an IP address for 'support.google.com'. The local DNS gives it to a resolver, which then returns it to the browser.
@@ -105,16 +109,17 @@ We are getting close to the World Wide Web (WWW) - an architectural framework fo
 
 From the users' point of view, the Web consists of Web pages looking like documents with some content that can include references to other pages. Those references are called hyperlinks. They are usually highlighted and clickable and allow the user to jump up to another page if needed. The popularity of the Web is based on the fact that it is easy for beginners to use because of its rich graphical interface and amount of linked resources that form a huge web of related information. Text containing hyperlinks is called hypertext and can be retrieved and rendered by a browser. 
 
-For pages to direct the user to a related webpage, each hyperlink needs a unique address inside it. On the Web, addressing is specified by Uniform Resource Locator (an URL).
+For pages to direct the user to a related webpage, each hyperlink needs a unique address inside it. On the Web, addressing is specified by Uniform Resource Locator (URL).
 
-URLs consist of three parts:
-The protocol (also known as a scheme)
-The machine's domain name for DNS lookup
-And a path indicating a unique directory with the page information
+URLs consist of three parts, which we are going to see on this example address:
+https://en.wikiquote.org/wiki/Main_Page.
 
-For example, https://en.wikiquote.org/wiki/Main_Page.
+Ther first part is a protocol (also known as a scheme) - 'http'
+The next one is a machine's domain name for DNS lookup - 'en.wikiquote.org'
+The last one represents a path indicating a unique directory with the page information - '/wiki/Main_Page'
 
-When the user clicks on a hyperlink, the browser asks a DNS for the IP address of the domain specified in the URL and then establishes a TCP connection with the appropriate server machine. The next step is to ask for a specific page. In our example is 'Main_Page' located in the 'wiki' directory. The browser uses an HTTP protocol (Hypertext Transfer Protocol) with a GET command in the header to retrieve data. The server replies with hypertext sent as a plain text in ASCII or UTF-16 format. 
+
+When the user triggers a hyperlink, the browser asks a DNS for the IP address of the domain specified in the URL and then establishes a TCP connection with the appropriate server machine. The next step is to ask for a specific page. In our example is 'Main_Page' located in the 'wiki' directory. The browser uses an HTTP protocol (Hypertext Transfer Protocol) with a GET command in the header to retrieve data. The server replies with hypertext sent as a plain text in ASCII or UTF-16 format. 
 
 In order to control and troubleshoot possible problems with browser-server communication, status codes are added to the server response. All status codes must have three digits and are divided into five groups by the first digit.
 
